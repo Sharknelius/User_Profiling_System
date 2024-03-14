@@ -1,0 +1,16 @@
+Room ID,Building name,Capacity,Type,Equipment,Software,Accessibility,Floor,Access type
+1094,IST,4,Office,Office,General Windows OS,Mobility Access and Braille,2,Staff
+2200,BARC,52,Multi-purpose,Conference,General Windows OS,Lecture with Mobility Access,2,All
+1048,IST,30,Lecture,Lecture,General Windows OS,Lecture,1,Students and Staff
+1068,IST,30,Lecture,Lecture,General Windows OS,Lecture,1,Students and Staff
+1054,IST,30,Lab,Physics,Software Oriented,"Adjustable Chairs, Lighting and Braille",1,Students and Staff
+2013,BARC,10,Meeting,"Chairs, Tables, and/or boards",None,"Adjustable Chairs, Lighting and Braille",1,Students and Staff
+2234,BARC,30,Lab,Computers,Software Oriented,"Adjustable Chairs, Lighting, Braille and Mobility",2,Students and Staff
+1003,IST,30,Lecture,Lecture,Software Oriented,Lecture,1,Students and Staff
+2102,BARC,30,Lab,Engineering,None,Lecture,1,Students and Staff
+2250,BARC,15,Lounge,"Chairs, Tables, and/or boards",None,Lecture with Mobility Access,2,Students and Staff
+1058,IST,10,Resource,3D Printers,None,Adjustable Lighting and Braille,1,Students and Staff
+None,IST,52,Resource,Library,Software Oriented,"Adjustable Chairs, Tables, Braille and Mobility",2,All
+1001,IST,40,Multi-purpose,Conference,None,Adjustable Lighting,1,Students and Staff
+2001,BARC,30,Lecture,Lecture,General Windows OS,Lecture,2,All
+1030,IST,20,Resource,Maker-space,Software Oriented,Adjustable Chairs and Lighting,1,All
