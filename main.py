@@ -95,18 +95,19 @@ user_df.to_csv("users.csv", index=False, encoding='UTF-8')
 user_df = pd.read_csv("users.csv")
 print(user_df.head())
 
-# Concatenate preferences into a single DataFrame with a uniform column naming
+# Concatenate preferences into 1 DataFrame with uniform column naming
 popular_preferences = pd.concat([
     user_df[['User ID', 'Pref 1', 'Pref 1 Rating']].rename(columns={'Pref 1': 'Preference', 'Pref 1 Rating': 'Rating'}),
     user_df[['User ID', 'Pref 2', 'Pref 2 Rating']].rename(columns={'Pref 2': 'Preference', 'Pref 2 Rating': 'Rating'}),
     user_df[['User ID', 'Pref 3', 'Pref 3 Rating']].rename(columns={'Pref 3': 'Preference', 'Pref 3 Rating': 'Rating'}),
 ])
 
-# Calculate average rating for each preference
+# Calculate by sorting the average rating for each preference
 average_ratings = popular_preferences.groupby('Preference')['Rating'].mean().sort_values(ascending=False)
-
+ # row based similarity recommendation system
 # Get top preferences
-top_preferences = average_ratings.head(3).index.tolist()
+top_preferences = average_ratings.head(5).index.tolist()
 
-print("Top 3 recommended Preferences based on past users:")
-print(top_preferences)
+print("\nTop 5 recommended Preferences based on past users:")
+for i in range(5):
+    print(f'{i + 1}. {top_preferences[i]}')
