@@ -96,7 +96,7 @@ user_df = pd.DataFrame(userData)
 
 user_df.to_csv("users.csv", index=False, encoding='UTF-8')
 """
-user_df = pd.read_csv("users.csv", dtype=str)  # Make sure values are strings
+user_df = pd.read_csv("users.csv", dtype=str, header=0)  # Make sure values are strings
 user_df.replace({'': np.nan, ' ': np.nan}, inplace=True)  # Convert blank spaces to nan
 print(user_df.head())
 
