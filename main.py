@@ -39,19 +39,19 @@ for _ in range(200):
     if building == 'IST' and typeR != 'Office':
         schedule = '6:15am - 12am'
     elif building == 'BARC' and typeR != 'Office':
-        schedule = '6:15am - 12am with 7pm quiet hours'
+        schedule = '6:15am - 12am with 7pm quiet hr'
 
 
     row = {
         'Room ID': random.randint(1000, 5000),
-        'Building Name': building,
+        'Building': building,
         'Capacity': random.randint(10, 52),
         'Type': typeR,
         'Equipment': equipment,
         'Software': random.choice(['General Windows OS', 'Software Oriented', 'None']),
         'Accessibility': accessibility,
         'Floor': floor,
-        'Access Type': random.choice(['Staff', 'Students', 'All']),
+        'Access': random.choice(['Staff', 'Students', 'All']),
         'Schedule': schedule,
         'Requestable': random.choice(['Yes', 'No'])
     }
@@ -63,7 +63,7 @@ df.to_csv("rooms.csv", index=False, encoding='UTF-8')
 """
 
 rooms_df = pd.read_csv("rooms.csv")
-print(rooms_df.head())
+
 """
 # user data
 fake = Faker()
@@ -72,19 +72,23 @@ userData = []
 for i in range(1, 10001):
     user_id = str(i).zfill(4)
 
-    preferences = ['Capacity', 'Type', 'Equipment', 'Software', 'Accessibility', 'Access Type', 'Schedule', 'Requestable']
-    pref1, pref2, pref3 = random.sample(preferences, 3)
+    preferences = ['Building', 'Capacity', 'Type', 'Equipment', 'Software', 'Accessibility', 'Floor', 'Access', 'Schedule', 'Requestable']
+    pref5, pref4, pref3, pref2, pref1 = random.sample(preferences, 5)
 
-    ratings = [3, 2, 1]
+    ratings = [1, 2, 3, 4, 5]
 
     row = {
         'User ID': user_id,
         'Pref 1': pref1,
-        'Pref 1 Rating': ratings[0],
+        'Rating 1': ratings[0],
         'Pref 2': pref2,
-        'Pref 2 Rating': ratings[1],
+        'Rating 2': ratings[1],
         'Pref 3': pref3,
-        'Pref 3 Rating': ratings[2]
+        'Rating 3': ratings[2],
+        'Pref 4': pref4,
+        'Rating 4': ratings[3],
+        'Pref 5': pref5,
+        'Rating 5': ratings[4]
     }
     userData.append(row)
 
@@ -98,6 +102,8 @@ print(user_df.head())
 
 # Concatenate preferences into 1 DataFrame with uniform column naming
 popular_preferences = pd.concat([
+    user_df[['User ID', 'Pref 5', 'Rating 5']].rename(columns={'Pref 5': 'Preference', 'Rating 5': 'Rating'}),
+    user_df[['User ID', 'Pref 4', 'Rating 4']].rename(columns={'Pref 4': 'Preference', 'Rating 4': 'Rating'}),
     user_df[['User ID', 'Pref 3', 'Rating 3']].rename(columns={'Pref 3': 'Preference', 'Rating 3': 'Rating'}),
     user_df[['User ID', 'Pref 2', 'Rating 2']].rename(columns={'Pref 2': 'Preference', 'Rating 2': 'Rating'}),
     user_df[['User ID', 'Pref 1', 'Rating 1']].rename(columns={'Pref 1': 'Preference', 'Rating 1': 'Rating'}),
@@ -114,43 +120,49 @@ print("\nTop 5 recommended Preferences based on past users:")
 for i in range(5, 0, -1):
     print(f'{i}. {top_preferences[i - 1]}')
 
-
-def find_users_missing_third_pref(user_df):
-    # Identify users with exactly 2 non-null preferences
-    mask = user_df[['Pref 1', 'Pref 2', 'Pref 3']].notna().sum(axis=1) == 2
-    return user_df[mask].index
+def calculate_rating_distance(user_rating, average_rating):
+    # Find distance between user's rating and average rating
+    return abs(user_rating - average_rating)  # Make absolute to avoid negatives
 
 
-def recommend_based_on_popularity_and_similarity(user_df, popular_preferences):
-    # Initialize a column for recommendations if it doesn't exist
-    if 'Recommended Pref 3' not in user_df.columns:
-        user_df['Recommended Pref 3'] = np.nan
+def recommend_last_preference(user_df, popular_preferences):
+    user_df['Recommended Pref 5'] = np.nan  # Ensure there's a column for the recommended preference
 
+    preference_avg_ratings = popular_preferences.groupby('Preference')['Rating'].mean()
+    preference_popularity = popular_preferences['Preference'].value_counts()
+
+    # Loop through users
     for user_index, user_row in user_df.iterrows():
-        if pd.isna(user_row['Pref 3']):
-            user_prefs = [user_row['Pref 1'], user_row['Pref 2']]
-            # Filter out NaN preferences
-            user_prefs = [pref for pref in user_prefs if pd.notna(pref)]
+        if pd.isna(user_row['Pref 5']):
+            user_prefs = [(user_row['Pref 1'], user_row['Rating 1']), (user_row['Pref 2'], user_row['Rating 2']), (user_row['Pref 3'], user_row['Rating 3']), (user_row['Pref 4'], user_row['Rating 4'])]
+            user_prefs = [pref for pref in user_prefs if pd.notna(pref[0])]
 
-            # Find similar users' preferences (excluding the current user's preferences)
-            similar_prefs = popular_preferences[~popular_preferences['Preference'].isin(user_prefs)]
+            print(f"\nUser {user_row['User ID']}'s current preferences and ratings: {user_prefs}")
 
-            # Aggregate these preferences and count occurrences
-            preference_counts = similar_prefs['Preference'].value_counts()
+            scores = []
+            for preference, avg_rating in preference_avg_ratings.items():
+                if preference in [pref[0] for pref in user_prefs]:
+                    continue  # Skip already chosen preferences
 
-            # Optionally, consider the average rating of these preferences
-            preference_ratings = popular_preferences.groupby('Preference')['Rating'].mean()
+                distances = [calculate_rating_distance(float(user_pref[1]), avg_rating) for user_pref in user_prefs]
+                avg_distance = sum(distances) / len(distances)
+                score = (1 / (avg_distance + 1)) * preference_popularity.get(preference, 0)
+                scores.append((preference, score))
 
-            # Combine counts with ratings to prioritize both popularity and rating
-            combined_scores = preference_counts.combine(preference_ratings, np.multiply, fill_value=0)
-
-            # Recommend the highest scoring preference not already chosen by the user
-            for pref in combined_scores.sort_values(ascending=False).index:
-                if pref not in user_prefs:
-                    user_df.at[user_index, 'New Pref 3'] = pref
-                    break
+            if scores:
+                scores.sort(key=lambda x: x[1], reverse=True)  # Sort scores to find the highest one
+                recommended_pref = scores[0][0]
+                user_df.at[user_index, 'Recommended Pref 5'] = recommended_pref
+                print(f"Recommended for user {user_row['User ID']}: {recommended_pref} with score: {scores[0][1]}")
+            else:
+                print(f"No recommendation found for user {user_row['User ID']}")
 
     return user_df
 
-new_user_df = recommend_based_on_popularity_and_similarity(user_df, popular_preferences)
-print(new_user_df[['User ID', 'Pref 1', 'Pref 2', 'Pref 3', 'New Pref 3']].head())
+# Make sure to convert 'Rating' to float before using it in calculations
+popular_preferences['Rating'] = popular_preferences['Rating'].astype(float)
+new_user_df = recommend_last_preference(user_df, popular_preferences)
+print("\n")
+
+print(new_user_df[['User ID', 'Pref 1', 'Pref 2', 'Pref 3', 'Pref 4', 'Pref 5', 'Recommended Pref 5']].head())
+# """
