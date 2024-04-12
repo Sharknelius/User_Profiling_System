@@ -1,9 +1,9 @@
 User ID,Pref 1,Rating 1,Pref 2,Rating 2,Pref 3,Rating 3,Pref 4,Rating 4,Pref 5,Rating 5
-0001,Equipment,1,Schedule,2,Software,3,Accessibility,4,Capacity,5
+0001,Equipment,1,Schedule,2,Software,3,Accessibility,4, ,5
 0002,Building,1,Capacity,2,Floor,3,Access,4,Type,5
-0003,Building,1,Equipment,2,Access,3,Accessibility,4, ,5
+0003,Building,1,Equipment,2,Access,3,Accessibility,4,Schedule,5
 0004,Building,1,Floor,2,Requestable,3,Type,4,Schedule,5
-0005,Floor,1,Software,2,Requestable,3,Access,4, ,5
+0005,Floor,1,Software,2,Requestable,3,Access,4,Capacity,5
 0006,Software,1,Schedule,2,Equipment,3,Capacity,4,Building,5
 0007,Capacity,1,Floor,2,Access,3,Software,4,Building,5
 0008,Accessibility,1,Equipment,2,Capacity,3,Type,4,Schedule,5
@@ -13,9 +13,9 @@ User ID,Pref 1,Rating 1,Pref 2,Rating 2,Pref 3,Rating 3,Pref 4,Rating 4,Pref 5,R
 0012,Software,1,Accessibility,2,Capacity,3,Access,4,Building,5
 0013,Requestable,1,Software,2,Floor,3,Schedule,4,Equipment,5
 0014,Capacity,1,Requestable,2,Equipment,3,Accessibility,4,Access,5
-0015,Equipment,1,Schedule,2,Accessibility,3,Access,4, ,5
+0015,Equipment,1,Schedule,2,Accessibility,3,Access,4,Building,5
 0016,Accessibility,1,Type,2,Building,3,Floor,4,Software,5
-0017,Software,1,Type,2,Requestable,3,Access,4, ,5
+0017,Software,1,Type,2,Requestable,3,Access,4,Floor,5
 0018,Schedule,1,Capacity,2,Software,3,Access,4,Floor,5
 0019,Requestable,1,Software,2,Equipment,3,Capacity,4,Building,5
 0020,Accessibility,1,Requestable,2,Floor,3,Type,4,Equipment,5
@@ -47,7 +47,7 @@ User ID,Pref 1,Rating 1,Pref 2,Rating 2,Pref 3,Rating 3,Pref 4,Rating 4,Pref 5,R
 0046,Capacity,1,Type,2,Software,3,Requestable,4,Building,5
 0047,Equipment,1,Capacity,2,Schedule,3,Access,4,Building,5
 0048,Accessibility,1,Access,2,Equipment,3,Software,4,Floor,5
-0049,Accessibility,1,Requestable,2,Type,3,Schedule,4, ,5
+0049,Accessibility,1,Requestable,2,Type,3,Schedule,4,Access,5
 0050,Requestable,1,Equipment,2,Schedule,3,Floor,4,Software,5
 0051,Building,1,Software,2,Accessibility,3,Requestable,4,Access,5
 0052,Software,1,Type,2,Equipment,3,Schedule,4,Accessibility,5
