@@ -9,6 +9,11 @@ import matplotlib.pyplot as plt
 from surprise import Reader, Dataset
 from faker import Faker
 
+pd.set_option('display.max_columns', None)  # all columns
+
+pd.set_option('display.width', 1000)
+
+pd.set_option('display.max_rows', 20000)
 """
 fake = Faker()
 roomData = []
@@ -100,41 +105,6 @@ user_df = pd.read_csv("users.csv", dtype=str, header=0)  # Make sure values are 
 user_df.replace({'': np.nan, ' ': np.nan}, inplace=True)  # Convert blank spaces to nan
 print(user_df.head())
 
-# Concatenate preferences into 1 DataFrame with uniform column naming
-popular_preferences0 = pd.concat([
-    user_df[['User ID', 'Pref 1', 'Rating 1']].rename(columns={'Pref 1': 'Preference', 'Rating 1': 'Rating'}),
-    user_df[['User ID', 'Pref 2', 'Rating 2']].rename(columns={'Pref 2': 'Preference', 'Rating 2': 'Rating'}),
-    user_df[['User ID', 'Pref 3', 'Rating 3']].rename(columns={'Pref 3': 'Preference', 'Rating 3': 'Rating'}),
-    user_df[['User ID', 'Pref 4', 'Rating 4']].rename(columns={'Pref 4': 'Preference', 'Rating 4': 'Rating'}),
-    user_df[['User ID', 'Pref 5', 'Rating 5']].rename(columns={'Pref 5': 'Preference', 'Rating 5': 'Rating'}),
-])
-
-popular_preferences0 = popular_preferences0.dropna(subset=['Preference'])
-# Rating is now numeric
-popular_preferences0['Rating'] = pd.to_numeric(popular_preferences0['Rating'])
-
-top_prefs_by_rating = {}
-
-# This for loop will check for each rating the most popular preference
-for rating in [5, 4, 3, 2, 1]:
-    preferences_for_rating = popular_preferences0[popular_preferences0['Rating'] == rating]
-
-    # Count number of preference and sort them
-    preference_count = preferences_for_rating['Preference'].value_counts()
-
-    # Get the most popular preference
-    if not preference_count.empty:
-        top_prefs_by_rating[rating] = preference_count.idxmax()
-
-print("\nMost popular preferences for each rating:")
-for i in range(5, 0, -1):
-    rating_key = str(i)  # Set rating to string
-    # Check if the rating exists
-    if i in top_prefs_by_rating:
-        print(f'Rating {i}: {top_prefs_by_rating[i]}')
-
-print("\n")
-
 # Weighted score across all preferences
 popular_preferences1 = pd.concat([
     user_df[['User ID', 'Pref 1', 'Rating 1']].rename(columns={'Pref 1': 'Preference', 'Rating 1': 'Rating'}),
@@ -179,6 +149,7 @@ def calculate_rating_distance(user_rating, average_rating, weight):
 
 def recommend_last_preference(user_df, popular_preferences):
     user_df['Recommended Pref 5'] = np.nan  # Ensures there's a column for recommended preference
+    user_df = user_df.astype({'Recommended Pref 5': 'object'})
 
     preference_avg_ratings = popular_preferences.groupby('Preference')['Rating'].mean()  # Calculates the average
     # rating for each preference
@@ -199,7 +170,7 @@ def recommend_last_preference(user_df, popular_preferences):
             ]
             user_prefs = [pref for pref in user_prefs if pd.notna(pref[0])]
 
-            print(f"\nUser {user_row['User ID']}'s current preferences and ratings: {user_prefs}")
+            # print(f"\nUser {user_row['User ID']}'s current preferences and ratings: {user_prefs}")
 
             scores = []
             for preference, avg_rating in preference_avg_ratings.items():
@@ -219,9 +190,7 @@ def recommend_last_preference(user_df, popular_preferences):
                 scores.sort(key=lambda x: x[1], reverse=True)  # Sort scores to find the highest one
                 recommended_pref = scores[0][0]
                 user_df.at[user_index, 'Recommended Pref 5'] = recommended_pref
-                print(f"Recommended for user {user_row['User ID']}: {recommended_pref} with score: {scores[0][1]}")
-            else:
-                print(f"No recommendation found for user {user_row['User ID']}")
+                # print(f"Recommended for user {user_row['User ID']}: {recommended_pref} with score: {scores[0][1]}")
 
     return user_df
 
@@ -235,8 +204,6 @@ def calculate_similarity_score(user_prefs, other_user_prefs, total_preferences=1
     # Initialize sum of squared differences and count of compared preferences
     sum_squared_diff = 0
     compared_preferences = 0
-
-    # print(f"Entered method")
 
     # Iterate through each preference in the first user
     for pref_name, rating in user_prefs.items():
@@ -257,8 +224,9 @@ def calculate_similarity_score(user_prefs, other_user_prefs, total_preferences=1
     return avg_squared_diff
 
 def recommend_last_preference2(user_df, popular_preferences):
-    # Add a column for the recommended fifth preference if it doesn't exist
+    # Ensure there's a column for the recommended fifth preference
     user_df['Recommended Pref 5'] = np.nan
+    user_df = user_df.astype({'Recommended Pref 5': 'object'})
 
     # Convert user preferences and ratings into a more usable format
     users_preferences = {}
@@ -271,59 +239,56 @@ def recommend_last_preference2(user_df, popular_preferences):
                 prefs[pref_name] = float(rating)
         users_preferences[row['User ID']] = prefs
 
-    # Iterate through users missing a fifth preference
+    # Iterate through all users
     for user_id, user_prefs in users_preferences.items():
-        if len(user_prefs) < 4:  # Skip if user has less than 4 preferences
-            continue
-
         # Calculate similarity with every other user
         similarity_scores = []
         for other_user_id, other_user_prefs in users_preferences.items():
-            if user_id == other_user_id or len(other_user_prefs) != 4:
-                continue  # Skip self comparison and users not fitting the criteria for recommendation
-            # Return similarity score
-            similarity_score = calculate_similarity_score(user_prefs, other_user_prefs)
-            # print({similarity_score})
-            similarity_scores.append((other_user_id, similarity_score))
+            if user_id != other_user_id:
+                similarity_score = calculate_similarity_score(user_prefs, other_user_prefs)
+                if similarity_score <= 0.2:  # Only consider scores of 0.2 or lower
+                    similarity_scores.append((other_user_id, similarity_score))
 
-        # Check if there are any similarity scores to consider
+        # Check if there are any suitable similarity scores to consider
         if not similarity_scores:
-            # Handle the case when no similar users are found
-            print(f"No similar users found for user {user_id}, unable to recommend a fifth preference.")
+            print(f"No suitable similar users found for User {user_id} with a score of 0.2 or below")
         else:
             # Sort the similarity scores in ascending order (lower score = more similar)
             similarity_scores.sort(key=lambda x: x[1])
-            # Select the most similar user based on the lowest similarity score
-            most_similar_user_id, _ = similarity_scores[0]
+            # Select the two most similar users based on the lowest similarity scores
+            similar_users = similarity_scores[:2]
 
-            # Fetch the preferences of the most similar user
-            most_similar_user_prefs = users_preferences[most_similar_user_id]
+            print("\n")
+            # Display information about the two most similar users
+            print(f"Top similar users for User {user_id} with scores ≤ 0.2 are:")
+            for sim_user_id, sim_score in similar_users:
+                print(f"User ID: {sim_user_id} with similarity score: {sim_score}")
 
-            # Try to find a preference that the most similar user has but the current user doesn't
-            recommended_pref_found = False
-            for pref in most_similar_user_prefs.keys():
-                if pref not in user_prefs:
-                    # Get the name of the preference to recommend
-                    recommended_pref = \
-                    popular_preferences[popular_preferences['Preference'] == pref]['Preference'].values[0]
-                    # Update the user_df with the recommended preference
-                    user_df.loc[user_df['User ID'] == user_id, 'Recommended Pref 5'] = recommended_pref
-                    recommended_pref_found = True
-                    print(f"Recommended for user {user_id}: {recommended_pref}")
-                    break  # Stop looking once a preference is found and recommended
+            # Proceed with recommendation logic based on the most similar user
+            if similar_users:
+                most_similar_user_id = similar_users[0][0]
+                most_similar_user_prefs = users_preferences[most_similar_user_id]
 
-            if not recommended_pref_found:
-                # Handle the case when a similar user is found, but no new preference can be recommended
-                print(f"Could not find a new preference to recommend to user {user_id} based on similar users.")
+                recommended_pref_found = False
+                for pref in most_similar_user_prefs.keys():
+                    if pref not in user_prefs:
+                        recommended_pref = popular_preferences[popular_preferences['Preference'] == pref]['Preference'].values[0]
+                        user_df.loc[user_df['User ID'] == user_id, 'Recommended Pref 5'] = recommended_pref
+                        recommended_pref_found = True
+                        print(f"Recommended for User {user_id}: {recommended_pref}")
+                        break
+
+                if not recommended_pref_found:
+                    print(f"Could not find a new preference to recommend to User {user_id} based on similar users")
 
     return user_df
 
 popular_preferences1['Rating'] = popular_preferences1['Rating'].astype(float)
 
-new_user_df = recommend_last_preference(user_df, popular_preferences1)
-print(new_user_df[['User ID', 'Pref 1', 'Pref 2', 'Pref 3', 'Pref 4', 'Pref 5', 'Recommended Pref 5']].head())
-print("\n")
+#new_user_df = recommend_last_preference(user_df, popular_preferences1)
+#print(new_user_df[['User ID', 'Pref 1', 'Pref 2', 'Pref 3', 'Pref 4', 'Pref 5', 'Recommended Pref 5']].head(21))
+#print("\n")
 
 new_user_df2 = recommend_last_preference2(user_df, popular_preferences1)
 print("\n")
-print(new_user_df2[['User ID', 'Pref 1', 'Pref 2', 'Pref 3', 'Pref 4', 'Pref 5', 'Recommended Pref 5']].head())
+print(new_user_df2[['User ID', 'Pref 1', 'Pref 2', 'Pref 3', 'Pref 4', 'Pref 5', 'Recommended Pref 5']].head(21))
