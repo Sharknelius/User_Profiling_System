@@ -1,0 +1,201 @@
+Room ID,Building,Capacity,Type,Equipment,Software,Accessibility,Floor,Access,Schedule,Requestable
+3303,BARC,52,Office,"Chairs, Tables, Boards",Software Oriented,None,2,All,Office Hours,Yes
+2459,IST,14,Resource,Maker-space,General Windows OS,None,2,Students,6:15am - 12am,Yes
+3006,BARC,32,Office,Lecture,Software Oriented,Tables,1,All,Office Hours,No
+1876,IST,47,Resource,3D Printer,Software Oriented,Chairs,2,Staff,6:15am - 12am,Yes
+2806,BARC,29,Meeting,3D Printer,General Windows OS,None,1,Students,6:15am - 12am with 7pm quiet hr,No
+1747,BARC,47,Lounge,Maker-space,Software Oriented,Chairs,1,Students,6:15am - 12am with 7pm quiet hr,Yes
+3983,IST,22,Lecture,Engineering,None,Lighting,1,Students,6:15am - 12am,Yes
+3632,BARC,17,Office,Engineering,Software Oriented,Braille,2,All,Office Hours,No
+2176,IST,34,Lecture,Physics,General Windows OS,Chairs,1,Students,6:15am - 12am,No
+3719,IST,11,Resource,Lecture,Software Oriented,Braille,2,Staff,6:15am - 12am,No
+1050,IST,21,Lecture,Physics,Software Oriented,Braille,1,All,6:15am - 12am,Yes
+1263,BARC,17,Office,Library,None,Chairs,1,Staff,Office Hours,No
+4759,IST,23,Lecture,Library,General Windows OS,None,1,Staff,6:15am - 12am,No
+4954,IST,38,Lab,3D Printer,None,None,1,All,6:15am - 12am,Yes
+3465,BARC,18,Meeting,Library,General Windows OS,Braille,2,All,6:15am - 12am with 7pm quiet hr,Yes
+4477,IST,21,Office,Library,None,Chairs,2,Students,Office Hours,No
+4068,BARC,44,Office,Maker-space,General Windows OS,Mobility,2,All,Office Hours,No
+1566,BARC,23,Meeting,3D Printer,General Windows OS,Braille,2,Staff,6:15am - 12am with 7pm quiet hr,No
+1696,IST,52,Lecture,Maker-space,Software Oriented,Mobility,1,All,6:15am - 12am,No
+4609,BARC,39,Multi-purpose,"Chairs, Tables, Boards",None,Lighting,1,All,6:15am - 12am with 7pm quiet hr,Yes
+1765,BARC,31,Resource,3D Printer,Software Oriented,None,1,Students,6:15am - 12am with 7pm quiet hr,No
+3551,BARC,25,Meeting,Engineering,General Windows OS,Braille,1,Students,6:15am - 12am with 7pm quiet hr,No
+4710,BARC,47,Lounge,Maker-space,None,Tables,1,All,6:15am - 12am with 7pm quiet hr,No
+2138,IST,35,Lecture,Library,None,None,1,All,6:15am - 12am,No
+4212,BARC,34,Multi-purpose,Physics,Software Oriented,Braille,1,Students,6:15am - 12am with 7pm quiet hr,Yes
+4152,IST,33,Resource,Physics,General Windows OS,Mobility,1,Staff,6:15am - 12am,No
+3241,BARC,25,Lecture,Lecture,General Windows OS,Tables,1,Staff,6:15am - 12am with 7pm quiet hr,No
+4159,IST,45,Office,Computers,Software Oriented,Braille,2,All,Office Hours,Yes
+3999,BARC,28,Multi-purpose,Computers,General Windows OS,Braille,1,All,6:15am - 12am with 7pm quiet hr,Yes
+4891,IST,36,Lecture,Library,General Windows OS,Chairs,1,Students,6:15am - 12am,No
+4045,IST,51,Resource,Computers,None,Braille,2,Students,6:15am - 12am,Yes
+2035,IST,37,Resource,Physics,Software Oriented,Chairs,2,Staff,6:15am - 12am,Yes
+1233,IST,19,Meeting,Library,None,Braille,2,All,6:15am - 12am,Yes
+2080,IST,15,Lecture,3D Printer,General Windows OS,Chairs,1,Students,6:15am - 12am,Yes
+2690,IST,44,Lecture,"Chairs, Tables, Boards",None,Chairs,1,Students,6:15am - 12am,No
+1650,BARC,15,Multi-purpose,Maker-space,General Windows OS,Chairs,2,Students,6:15am - 12am with 7pm quiet hr,No
+3710,IST,22,Multi-purpose,Engineering,None,None,1,All,6:15am - 12am,No
+1406,BARC,38,Lounge,Chemistry,None,Chairs,2,All,6:15am - 12am with 7pm quiet hr,Yes
+3574,BARC,32,Lecture,"Chairs, Tables, Boards",General Windows OS,Braille,1,Students,6:15am - 12am with 7pm quiet hr,No
+3844,BARC,16,Lecture,Library,None,None,1,All,6:15am - 12am with 7pm quiet hr,Yes
+3753,BARC,29,Resource,Library,None,None,2,Students,6:15am - 12am with 7pm quiet hr,Yes
+3951,IST,16,Resource,Chemistry,General Windows OS,Braille,2,All,6:15am - 12am,No
+4652,BARC,35,Resource,Physics,None,Tables,1,Staff,6:15am - 12am with 7pm quiet hr,No
+3897,BARC,36,Office,Conference,None,Tables,2,Students,Office Hours,Yes
+3718,BARC,52,Lab,Lecture,None,Chairs,2,All,6:15am - 12am with 7pm quiet hr,No
+3027,BARC,50,Multi-purpose,Engineering,Software Oriented,Mobility,2,Staff,6:15am - 12am with 7pm quiet hr,No
+3131,BARC,38,Resource,Engineering,Software Oriented,Mobility,1,All,6:15am - 12am with 7pm quiet hr,No
+2049,BARC,24,Lounge,Maker-space,None,Braille,2,Students,6:15am - 12am with 7pm quiet hr,No
+3898,BARC,35,Lecture,Computers,General Windows OS,Chairs,1,Students,6:15am - 12am with 7pm quiet hr,Yes
+4106,BARC,47,Lecture,Engineering,None,Chairs,1,Staff,6:15am - 12am with 7pm quiet hr,No
+4051,BARC,19,Office,Computers,General Windows OS,Lighting,1,All,Office Hours,No
+4397,IST,15,Lecture,Library,Software Oriented,Tables,1,Staff,6:15am - 12am,Yes
+1433,IST,20,Lounge,Conference,General Windows OS,Braille,1,Students,6:15am - 12am,No
+1566,IST,12,Lecture,"Chairs, Tables, Boards",General Windows OS,Mobility,1,Staff,6:15am - 12am,Yes
+3229,BARC,41,Resource,Conference,Software Oriented,Lighting,1,Students,6:15am - 12am with 7pm quiet hr,No
+2624,BARC,34,Lecture,Computers,General Windows OS,Mobility,1,Staff,6:15am - 12am with 7pm quiet hr,No
+4159,IST,28,Office,Chemistry,None,Tables,2,All,Office Hours,Yes
+4765,IST,21,Lecture,"Chairs, Tables, Boards",None,Tables,1,Staff,6:15am - 12am,Yes
+1576,BARC,37,Lecture,Computers,General Windows OS,Mobility,1,Students,6:15am - 12am with 7pm quiet hr,Yes
+1006,BARC,23,Resource,"Chairs, Tables, Boards",General Windows OS,Tables,2,Staff,6:15am - 12am with 7pm quiet hr,No
+1575,BARC,51,Resource,Lecture,None,Mobility,1,All,6:15am - 12am with 7pm quiet hr,No
+2191,BARC,11,Lecture,3D Printer,General Windows OS,Chairs,1,Students,6:15am - 12am with 7pm quiet hr,No
+1077,BARC,22,Multi-purpose,Library,Software Oriented,None,2,Students,6:15am - 12am with 7pm quiet hr,No
+4185,BARC,23,Multi-purpose,Chemistry,None,Braille,2,Staff,6:15am - 12am with 7pm quiet hr,No
+4027,BARC,27,Lecture,Lecture,None,Tables,1,All,6:15am - 12am with 7pm quiet hr,Yes
+2623,IST,44,Lounge,Conference,None,Braille,2,All,6:15am - 12am,Yes
+3194,IST,18,Meeting,Conference,Software Oriented,Lighting,1,All,6:15am - 12am,No
+4765,BARC,28,Multi-purpose,"Chairs, Tables, Boards",None,Tables,2,Staff,6:15am - 12am with 7pm quiet hr,Yes
+4853,IST,33,Lecture,"Chairs, Tables, Boards",Software Oriented,Mobility,1,Students,6:15am - 12am,No
+4005,BARC,45,Meeting,Lecture,General Windows OS,Tables,1,All,6:15am - 12am with 7pm quiet hr,No
+1301,BARC,40,Lecture,"Chairs, Tables, Boards",None,None,1,Students,6:15am - 12am with 7pm quiet hr,Yes
+4984,IST,35,Resource,Physics,None,Lighting,2,All,6:15am - 12am,No
+3884,IST,43,Lounge,3D Printer,Software Oriented,Mobility,2,Staff,6:15am - 12am,Yes
+1294,IST,19,Resource,Computers,Software Oriented,None,1,All,6:15am - 12am,Yes
+1566,BARC,16,Office,Engineering,None,Mobility,2,Students,Office Hours,No
+3427,IST,43,Resource,Chemistry,General Windows OS,Chairs,1,Staff,6:15am - 12am,Yes
+4233,IST,46,Multi-purpose,Engineering,None,Mobility,2,Staff,6:15am - 12am,Yes
+3934,IST,25,Lab,Conference,General Windows OS,Braille,2,Staff,6:15am - 12am,Yes
+4340,BARC,50,Lecture,Maker-space,None,Mobility,1,All,6:15am - 12am with 7pm quiet hr,Yes
+2764,IST,36,Office,Maker-space,General Windows OS,Mobility,2,Staff,Office Hours,No
+2996,IST,26,Lounge,Computers,Software Oriented,None,1,Students,6:15am - 12am,Yes
+1084,BARC,20,Meeting,Lecture,None,Braille,1,Staff,6:15am - 12am with 7pm quiet hr,Yes
+1563,IST,34,Lounge,Chemistry,General Windows OS,None,2,Students,6:15am - 12am,No
+1759,BARC,48,Lab,3D Printer,General Windows OS,Lighting,1,Staff,6:15am - 12am with 7pm quiet hr,Yes
+3787,IST,10,Resource,Computers,General Windows OS,Mobility,1,Students,6:15am - 12am,Yes
+2287,IST,29,Lab,"Chairs, Tables, Boards",Software Oriented,Chairs,1,All,6:15am - 12am,No
+2312,BARC,50,Meeting,3D Printer,Software Oriented,Lighting,1,Students,6:15am - 12am with 7pm quiet hr,Yes
+4093,IST,26,Lecture,"Chairs, Tables, Boards",General Windows OS,Braille,1,Staff,6:15am - 12am,Yes
+2174,BARC,37,Multi-purpose,Lecture,Software Oriented,None,1,All,6:15am - 12am with 7pm quiet hr,No
+2289,IST,22,Meeting,"Chairs, Tables, Boards",Software Oriented,Mobility,1,All,6:15am - 12am,Yes
+3648,IST,10,Lecture,"Chairs, Tables, Boards",Software Oriented,Tables,1,All,6:15am - 12am,No
+1817,IST,16,Resource,Lecture,General Windows OS,Chairs,1,Staff,6:15am - 12am,No
+2258,BARC,27,Meeting,Computers,General Windows OS,Lighting,1,All,6:15am - 12am with 7pm quiet hr,No
+1237,IST,26,Lab,Computers,Software Oriented,Chairs,1,Students,6:15am - 12am,No
+4823,BARC,38,Office,Conference,Software Oriented,Lighting,2,Students,Office Hours,No
+1829,BARC,31,Multi-purpose,Chemistry,General Windows OS,Braille,2,Students,6:15am - 12am with 7pm quiet hr,Yes
+3762,BARC,12,Office,Engineering,None,None,2,All,Office Hours,Yes
+3090,IST,41,Multi-purpose,Conference,None,Mobility,1,All,6:15am - 12am,No
+4474,BARC,13,Office,Computers,None,Mobility,2,Students,Office Hours,No
+4706,BARC,43,Office,Lecture,General Windows OS,Chairs,1,Students,Office Hours,Yes
+1953,BARC,50,Lounge,Maker-space,General Windows OS,Chairs,1,Students,6:15am - 12am with 7pm quiet hr,Yes
+1341,IST,51,Lounge,3D Printer,General Windows OS,Mobility,1,Students,6:15am - 12am,Yes
+3071,IST,26,Resource,3D Printer,Software Oriented,Tables,2,Staff,6:15am - 12am,No
+3413,BARC,20,Multi-purpose,Maker-space,General Windows OS,None,2,All,6:15am - 12am with 7pm quiet hr,Yes
+4178,BARC,27,Lecture,"Chairs, Tables, Boards",None,Mobility,1,Students,6:15am - 12am with 7pm quiet hr,Yes
+3889,IST,45,Office,3D Printer,General Windows OS,Lighting,2,Staff,Office Hours,Yes
+4354,IST,22,Multi-purpose,Computers,General Windows OS,Mobility,2,Students,6:15am - 12am,No
+1241,BARC,30,Meeting,Lecture,General Windows OS,Braille,2,Staff,6:15am - 12am with 7pm quiet hr,No
+3501,BARC,29,Lecture,"Chairs, Tables, Boards",Software Oriented,Chairs,1,All,6:15am - 12am with 7pm quiet hr,Yes
+2655,BARC,18,Lab,"Chairs, Tables, Boards",Software Oriented,Tables,2,All,6:15am - 12am with 7pm quiet hr,No
+3178,IST,46,Resource,Conference,None,Chairs,2,Staff,6:15am - 12am,No
+1259,BARC,31,Office,Chemistry,General Windows OS,Tables,1,Students,Office Hours,Yes
+4336,BARC,32,Lecture,3D Printer,General Windows OS,Tables,1,Students,6:15am - 12am with 7pm quiet hr,No
+4159,BARC,19,Lounge,Library,Software Oriented,Tables,2,All,6:15am - 12am with 7pm quiet hr,No
+4965,IST,18,Lab,Lecture,General Windows OS,None,2,Students,6:15am - 12am,Yes
+2095,IST,32,Lounge,3D Printer,Software Oriented,None,1,Staff,6:15am - 12am,No
+2727,IST,50,Lounge,Engineering,None,Chairs,1,Staff,6:15am - 12am,No
+1922,BARC,50,Lounge,Chemistry,General Windows OS,Braille,1,All,6:15am - 12am with 7pm quiet hr,No
+3669,IST,33,Lecture,Engineering,None,Tables,1,Students,6:15am - 12am,Yes
+2658,BARC,22,Multi-purpose,"Chairs, Tables, Boards",None,Braille,1,Students,6:15am - 12am with 7pm quiet hr,Yes
+4748,BARC,32,Meeting,Maker-space,General Windows OS,Mobility,2,Students,6:15am - 12am with 7pm quiet hr,No
+2278,IST,49,Multi-purpose,Lecture,Software Oriented,Lighting,2,Staff,6:15am - 12am,Yes
+3225,IST,23,Lecture,Maker-space,None,Mobility,1,Students,6:15am - 12am,No
+3472,IST,29,Lab,Lecture,General Windows OS,None,2,Students,6:15am - 12am,Yes
+1473,BARC,36,Lounge,Maker-space,General Windows OS,Mobility,1,All,6:15am - 12am with 7pm quiet hr,Yes
+1823,IST,29,Meeting,Library,Software Oriented,Lighting,1,All,6:15am - 12am,No
+3363,IST,17,Resource,Library,None,None,2,Staff,6:15am - 12am,Yes
+4026,BARC,38,Meeting,Chemistry,None,Braille,2,Staff,6:15am - 12am with 7pm quiet hr,Yes
+3324,BARC,33,Resource,Maker-space,None,Tables,2,Staff,6:15am - 12am with 7pm quiet hr,Yes
+1241,BARC,13,Lab,Library,General Windows OS,None,1,Students,6:15am - 12am with 7pm quiet hr,No
+1568,IST,19,Lecture,"Chairs, Tables, Boards",Software Oriented,Mobility,1,All,6:15am - 12am,No
+2477,BARC,21,Lecture,Lecture,None,Mobility,1,Staff,6:15am - 12am with 7pm quiet hr,Yes
+1688,BARC,11,Office,3D Printer,General Windows OS,None,2,All,Office Hours,Yes
+1894,IST,18,Lounge,Computers,None,Chairs,2,All,6:15am - 12am,No
+2357,BARC,10,Resource,Conference,Software Oriented,Mobility,2,Students,6:15am - 12am with 7pm quiet hr,Yes
+4269,IST,30,Resource,Physics,General Windows OS,Chairs,1,Students,6:15am - 12am,Yes
+3550,IST,46,Multi-purpose,Lecture,Software Oriented,None,1,All,6:15am - 12am,No
+4157,BARC,43,Office,Lecture,None,None,1,Staff,Office Hours,Yes
+2279,BARC,26,Lecture,Engineering,General Windows OS,Lighting,1,Staff,6:15am - 12am with 7pm quiet hr,No
+1418,BARC,14,Meeting,"Chairs, Tables, Boards",Software Oriented,None,2,All,6:15am - 12am with 7pm quiet hr,Yes
+1016,BARC,38,Multi-purpose,Library,General Windows OS,Mobility,1,Students,6:15am - 12am with 7pm quiet hr,Yes
+3050,BARC,45,Lab,Computers,Software Oriented,Chairs,1,Staff,6:15am - 12am with 7pm quiet hr,No
+2808,IST,26,Office,Computers,None,None,2,Staff,Office Hours,Yes
+2061,IST,42,Lab,"Chairs, Tables, Boards",None,Braille,1,All,6:15am - 12am,No
+3889,IST,24,Office,Library,Software Oriented,Tables,2,Staff,Office Hours,Yes
+4036,BARC,13,Lab,Maker-space,Software Oriented,Braille,2,Staff,6:15am - 12am with 7pm quiet hr,Yes
+4269,IST,22,Multi-purpose,Lecture,General Windows OS,Mobility,1,Staff,6:15am - 12am,No
+3692,IST,23,Lecture,Maker-space,None,Mobility,1,Staff,6:15am - 12am,Yes
+1091,IST,27,Multi-purpose,Maker-space,Software Oriented,Lighting,2,Students,6:15am - 12am,No
+4456,IST,32,Meeting,Chemistry,Software Oriented,None,2,All,6:15am - 12am,Yes
+1127,BARC,21,Lab,"Chairs, Tables, Boards",None,Lighting,2,All,6:15am - 12am with 7pm quiet hr,Yes
+2656,IST,13,Meeting,Maker-space,Software Oriented,Lighting,1,Students,6:15am - 12am,Yes
+2801,BARC,21,Resource,Conference,Software Oriented,Tables,1,Staff,6:15am - 12am with 7pm quiet hr,Yes
+2127,IST,20,Office,Computers,Software Oriented,Mobility,2,All,Office Hours,Yes
+1600,BARC,41,Lab,Computers,General Windows OS,Braille,2,Staff,6:15am - 12am with 7pm quiet hr,Yes
+3664,BARC,49,Office,Chemistry,General Windows OS,Lighting,2,Staff,Office Hours,Yes
+4971,IST,17,Multi-purpose,Lecture,General Windows OS,Lighting,2,All,6:15am - 12am,Yes
+3597,BARC,37,Lab,"Chairs, Tables, Boards",General Windows OS,None,1,All,6:15am - 12am with 7pm quiet hr,No
+1219,BARC,45,Office,Lecture,General Windows OS,Lighting,2,Students,Office Hours,Yes
+3213,IST,13,Lecture,"Chairs, Tables, Boards",Software Oriented,Braille,1,All,6:15am - 12am,No
+4406,BARC,36,Resource,3D Printer,Software Oriented,Lighting,2,Staff,6:15am - 12am with 7pm quiet hr,Yes
+3960,IST,21,Lecture,Physics,Software Oriented,None,1,All,6:15am - 12am,Yes
+1673,IST,21,Meeting,Lecture,Software Oriented,Tables,2,Students,6:15am - 12am,Yes
+3100,BARC,16,Multi-purpose,Engineering,None,Chairs,1,All,6:15am - 12am with 7pm quiet hr,No
+1683,IST,13,Lecture,Computers,General Windows OS,Chairs,1,Students,6:15am - 12am,No
+1444,IST,37,Lounge,Chemistry,None,Braille,1,Students,6:15am - 12am,Yes
+3558,BARC,34,Lounge,Engineering,None,Tables,2,Staff,6:15am - 12am with 7pm quiet hr,Yes
+3662,IST,33,Resource,Conference,Software Oriented,Chairs,2,All,6:15am - 12am,No
+3801,IST,32,Lab,Library,General Windows OS,Tables,1,Students,6:15am - 12am,No
+2225,IST,32,Lounge,Computers,Software Oriented,Tables,2,Staff,6:15am - 12am,No
+4863,BARC,46,Lecture,"Chairs, Tables, Boards",General Windows OS,None,1,Students,6:15am - 12am with 7pm quiet hr,Yes
+1468,IST,10,Lounge,Engineering,None,Braille,1,Staff,6:15am - 12am,Yes
+2738,IST,45,Lecture,Conference,Software Oriented,Chairs,1,Students,6:15am - 12am,No
+2377,IST,39,Multi-purpose,Engineering,General Windows OS,None,1,Staff,6:15am - 12am,No
+4118,IST,51,Office,Engineering,None,Lighting,2,All,Office Hours,No
+4907,BARC,12,Lab,Computers,Software Oriented,Mobility,1,Staff,6:15am - 12am with 7pm quiet hr,Yes
+4722,BARC,23,Lab,Maker-space,None,Tables,1,All,6:15am - 12am with 7pm quiet hr,No
+1205,BARC,33,Lecture,Library,Software Oriented,Chairs,1,Staff,6:15am - 12am with 7pm quiet hr,Yes
+3412,BARC,44,Lounge,Lecture,None,Lighting,2,Staff,6:15am - 12am with 7pm quiet hr,Yes
+3080,BARC,40,Lecture,Maker-space,General Windows OS,Tables,1,Students,6:15am - 12am with 7pm quiet hr,Yes
+1743,IST,10,Lecture,Lecture,None,None,1,All,6:15am - 12am,Yes
+4933,IST,17,Lab,3D Printer,General Windows OS,None,2,All,6:15am - 12am,Yes
+1055,BARC,44,Lecture,Chemistry,Software Oriented,Tables,1,Students,6:15am - 12am with 7pm quiet hr,No
+4395,BARC,10,Resource,3D Printer,None,None,2,Staff,6:15am - 12am with 7pm quiet hr,No
+3856,IST,27,Resource,Maker-space,Software Oriented,Braille,1,All,6:15am - 12am,Yes
+2002,BARC,52,Meeting,"Chairs, Tables, Boards",General Windows OS,Braille,2,All,6:15am - 12am with 7pm quiet hr,Yes
+2786,BARC,26,Multi-purpose,Library,Software Oriented,Chairs,1,Staff,6:15am - 12am with 7pm quiet hr,Yes
+3031,BARC,24,Lecture,Physics,None,Lighting,1,Staff,6:15am - 12am with 7pm quiet hr,Yes
+4970,IST,41,Multi-purpose,Conference,Software Oriented,Mobility,2,Students,6:15am - 12am,No
+3071,IST,49,Multi-purpose,Chemistry,None,Tables,2,Students,6:15am - 12am,Yes
+3273,IST,18,Lounge,Lecture,General Windows OS,Chairs,2,Staff,6:15am - 12am,Yes
+2394,BARC,43,Meeting,Chemistry,None,Chairs,1,All,6:15am - 12am with 7pm quiet hr,Yes
+1436,IST,15,Resource,Library,General Windows OS,Mobility,2,Staff,6:15am - 12am,No
+2938,BARC,21,Lounge,Chemistry,General Windows OS,Braille,2,Students,6:15am - 12am with 7pm quiet hr,Yes
+2347,IST,11,Multi-purpose,"Chairs, Tables, Boards",None,Lighting,2,Students,6:15am - 12am,Yes
+1835,BARC,17,Meeting,Engineering,General Windows OS,Braille,1,All,6:15am - 12am with 7pm quiet hr,Yes
+1764,BARC,14,Meeting,"Chairs, Tables, Boards",None,Braille,2,Staff,6:15am - 12am with 7pm quiet hr,No
+4987,BARC,18,Lounge,3D Printer,None,Lighting,1,Students,6:15am - 12am with 7pm quiet hr,Yes
+3685,BARC,29,Multi-purpose,Physics,Software Oriented,Lighting,2,Students,6:15am - 12am with 7pm quiet hr,Yes
+3863,IST,39,Lecture,Physics,General Windows OS,Braille,1,Students,6:15am - 12am,Yes
