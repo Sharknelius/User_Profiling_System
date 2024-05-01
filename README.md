@@ -1,4 +1,5 @@
 # User Profiling System
+Created as a research project in collaboration with Dr. Denis Ulybyshev in Spring 2024.
 ## Three Folders:
 Each folder contains a main.py and two csv files. Recommened to run in VSCode using Python compiler.
 ## 1. Dataset_built
