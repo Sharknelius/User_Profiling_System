@@ -10,17 +10,19 @@ pd.set_option('display.width', 1000)
 
 pd.set_option('display.max_rows', 20000)
 
-# Using the faker library, a dataset can be quickly created
+# Dataset creation using Faker
 fake = Faker()
+# roomData array created
 roomData = []
 
 for _ in range(200):
+    # Possible choices for columns
     typeR = random.choice(['Lab', 'Lecture', 'Lecture', 'Lounge', 'Meeting', 'Multi-purpose', 'Office', 'Resource'])
     equipment = random.choice(
         ['3D Printer', 'Chairs, Tables, Boards', 'Chemistry', 'Computers', 'Conference', 'Engineering', 'Lecture',
          'Library', 'Maker-space', 'Physics'])
     building = random.choice(['IST', 'BARC'])
-    # constraints
+    # Some basic constraints to column values
     if typeR == 'Lab' and (equipment == 'Chemistry' or equipment == 'Engineering'):
         accessibility = 'Lab Safety'
     else:
@@ -65,7 +67,7 @@ df.to_csv("rooms.csv", index=False, encoding='UTF-8')
 rooms_df = pd.read_csv("rooms.csv")
 print(rooms_df.head(21))
 
-# user data
+# User data
 fake = Faker()
 userData = []
 
