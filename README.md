@@ -1,6 +1,6 @@
 # User Profiling System
 ## Three Folders:
-Each folder contains a main.py and two csv files.
+Each folder contains a main.py and two csv files. Recommened to run in VSCode using Python compiler.
 ## 1. Dataset_built
 - Run main.py
 - Contains code for creating the rooms.csv and users.csv
